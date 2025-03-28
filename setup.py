@@ -20,7 +20,7 @@ long_description = read_readme()
 
 setup(
     name='SmolAgentsTelegram',
-    version='0.0.1',
+    version='1.0.1',
     packages=find_packages(),
     description='Wrapper To Create Telegram Agent Written in Small Agents Framework',
     long_description_content_type='text/markdown',

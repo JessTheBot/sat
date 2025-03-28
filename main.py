@@ -8,9 +8,9 @@ import os
 load_dotenv()
 
 
-def generat_client(user_id):
+def generat_client(on_message, user_id):
     model = HfApiModel(model_id="google/gemma-3-27b-it")
-    return CodeAgent(tools=[DuckDuckGoSearchTool()], model=model)
+    return CodeAgent(tools=[DuckDuckGoSearchTool(), on_message], model=model)
 
 
 if __name__ == "__main__":
