@@ -1,4 +1,4 @@
-from sat import start_agent_bot
+from adkt import start_agent_bot
 
 from dotenv import load_dotenv
 
@@ -32,15 +32,15 @@ def lookup_order_status(order_id: str) -> dict:
 
 
 
-def generat_client(on_message, user_id):
+def generat_client(send_telegram_message_tool, user_id):
     # --- Example Agent using Gemma 2B running via Ollama ---
     return LlmAgent(
         # LiteLLM knows how to connect to a local Ollama server by default
-        # model=LiteLlm(model="ollama/tripolskypetr/gemma3-tools:27b"), # Standard LiteLLM format for Ollama
-        model="gemini-2.5-pro-preview-03-25",
+        model=LiteLlm(model="ollama/yasserrmd/Llama-4-Scout-17B-16E-Instruct"), # Standard LiteLLM format for Ollama
+        # model="gemini-2.5-pro-preview-03-25",
         name="ollama_gemma_agent",
         instruction="You are Gemma, running locally via Ollama. You are assistent that doing conversation with user but also can provide status of the order. ",
-        tools=[lookup_order_status, on_message]
+        tools=[lookup_order_status, send_telegram_message_tool]
         # ... other agent parameters
     )
 

@@ -19,10 +19,10 @@ install_requires = read_requirements()
 long_description = read_readme()
 
 setup(
-    name='SmolAgentsTelegram',
-    version='1.0.1',
+    name='adkt',
+    version='0.0.1',
     packages=find_packages(),
-    description='Wrapper To Create Telegram Agent Written in Small Agents Framework',
+    description='Wrapper To Create Telegram Bot For Agents Implemented With ADK',
     long_description_content_type='text/markdown',
     long_description=long_description,
     author='Viacheslav Kovalevskyi',
